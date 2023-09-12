@@ -10,11 +10,11 @@
       function secondHighest(arr) {
         //Write your code here
         if (arr.length < 2) {
-          return "-Infinity";
+          return Number.NEGATIVE_INFINITY;
         }
-        for (let i=1; i<arr.length; i++) {
-          if (arr[i-1]== arr[i]) {
-            return "-Infinity";
+        for (let i = 1; i < arr.length; i++) {
+          if (arr[i - 1] == arr[i]) {
+            return Number.NEGATIVE_INFINITY;
           }
         }
         arr.sort();
@@ -27,7 +27,7 @@
         for (var i = 0; i < n; i++) {
           arr[i] = prompt("Enter element " + (i + 1));
         }
-        alert(secondHighest(arr))			   
+        alert(secondHighest(arr));
       }
       Main();
     </script>
