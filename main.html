@@ -8,26 +8,26 @@
   <body>
     <script>
       function secondHighest(arr) {
-        //Write your code here
         if (arr.length < 2) {
-          return Number.NEGATIVE_INFINITY;
-        }
-        for (let i = 1; i < arr.length; i++) {
-          if (arr[i - 1] == arr[i]) {
-            return Number.NEGATIVE_INFINITY;
-          }
-        }
-        let a = arr[0], b=arr[1];
-        for (let i=2; i<arr.length; i++) {
-          let currMax = a>b ? a : b;
-          let currMin = a<b ? a : b;
-          if (currMax > arr[i]) {
-            a = currMin;
-            b = arr[i];
-          }
-        }
-        let secmin = a>b? a:b;
-        return secmin;
+    return Number.NEGATIVE_INFINITY;
+  }
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i - 1] == arr[i]) {
+      return Number.NEGATIVE_INFINITY;
+    }
+  }
+  let a = arr[0],
+    b = arr[1];
+  for (let i = 2; i < arr.length; i++) {
+    let currMax = a > b ? a : b;
+    let currMin = a < b ? a : b;
+    if (currMin < arr[i]) {
+      a = currMax;
+      b = arr[i];
+    }
+  }
+  return Math.min(a, b);
+}
       }
 
       function Main() {
