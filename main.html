@@ -14,20 +14,13 @@
 		for (let i = 1; i < arr.length; i++) {
 		    if (arr[i - 1] == arr[i]) {
 		    return Number.NEGATIVE_INFINITY;
-	    }
+		    }
 	  }
-	  let a = arr[0], b = arr[1];
-	  for (let i = 2; i < arr.length; i++) {
-		let currMax = a > b ? a : b;
-	    let currMin = a < b ? a : b;
-	    if (currMin < arr[i]) {
-	      a = currMax;
-	      b = arr[i];
-	    }
+		  arr.sort((a,b) => a-b);
+		  return arr[arr.length - 2];
+	  
   }
-  return Math.min(a, b);
-}
-      }
+    
 
       function Main() {
         var n = prompt("Enter the number of elements");
@@ -37,6 +30,7 @@
         }
         alert(secondHighest(arr));
       }
+		
       Main();
     </script>
 
